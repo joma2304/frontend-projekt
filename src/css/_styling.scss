@@ -1,14 +1,26 @@
 @use 'variables';
 @use 'mixins';
 
-/*Styling karta*/
+* {
+    font-family: variables.$font;
+}
 
+/*Styling karta*/
 #mapid {
     margin-left: auto;
     margin-right: auto;
     width: 70%;
     height: 600px;
-    border-radius: 40px;
+    border-radius: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+    #mapid {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        height: 400px;
+    }
 }
 
 h1 {
@@ -28,26 +40,25 @@ h1 {
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
-}
 
-#searchButton {
-    @include mixins.button(variables.$secondary-color, #fff, variables.$hover-text, #fff);
-}
+    #searchButton {
+        @include mixins.button(variables.$secondary-color, #fff, variables.$hover-text, #fff);
+    }
 
-#searchInput {
-    @include mixins.styled-input(#ccc, #fff, #333);
+    #searchInput {
+        @include mixins.styled-input(#ccc, #fff, #333);
+    }
 }
 
 
 body {
-    background-color: variables.$base-color;
+    background: variables.$gradient-bg;
+    min-height: 100vh;
 }
 
-@media only screen and (max-width: 700px) {
-    #mapid {
-        margin-left: auto;
-        margin-right: auto;
-        width: 90%;
-        height: 400px;
-    }
+/*Error message*/
+#errorMessages {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
 }

@@ -4,4 +4,7 @@ $secondary-color: rgb(53, 105, 168);
 $text-color: rgb(31, 31, 31);
 $hover-text: darken($secondary-color, 10%);
 $hover-backg: darken($base-color, 20%);
+$gradient-bg: linear-gradient(0deg, $secondary-color 0%, lighten($base-color, 15%) 100%);
 
+/*Font*/
+$font: "Roboto", sans-serif;

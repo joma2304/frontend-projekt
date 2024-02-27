@@ -51,7 +51,7 @@ async function searchWeather() {
         try {
             const weatherData = await getWeatherData(query);
             if (weatherData) {
-                // Exempel på hur du kan använda väderdata
+                // Exempel på man du kan använda väderdata jag kan lägga till mer eller mindre sen
                 const temperature = weatherData.main.temp;
                 const weatherDescription = weatherData.weather[0].description;
 
