@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.scss">
     <title>Projekt uppgift</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/mapAndWeather.js" type="module"></script>
 </head>
+
 <body>
-    
+    <header>
+        <h1 class="title">Kart och vädertjänster</h1>
+    </header>
+    <main>
+        <h1 class="rubrik">Karta</h1>
+        <div id="searchholder">
+            <input type="search" id="searchInput" placeholder="Sök efter en plats">
+            <button id="searchButton">Sök</button>
+        </div>
+        <div id="mapid"></div>
+        <div id="errorMessages"></div>
+    </main>
+
 </body>
+<script src="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
 </html>

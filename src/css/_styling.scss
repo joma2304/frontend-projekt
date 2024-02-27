@@ -1,0 +1,53 @@
+@use 'variables';
+@use 'mixins';
+
+/*Styling karta*/
+
+#mapid {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 600px;
+    border-radius: 40px;
+}
+
+h1 {
+    color: variables.$text-color;
+}
+
+.title {
+    text-align: center;
+}
+
+.rubrik {
+    text-align: center;
+}
+
+#searchholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#searchButton {
+    @include mixins.button(variables.$secondary-color, #fff, variables.$hover-text, #fff);
+}
+
+#searchInput {
+    @include mixins.styled-input(#ccc, #fff, #333);
+}
+
+
+body {
+    background-color: variables.$base-color;
+}
+
+@media only screen and (max-width: 700px) {
+    #mapid {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        height: 400px;
+    }
+}

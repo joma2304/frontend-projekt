@@ -13,6 +13,10 @@
     "> 0.5%, last 2 versions, not dead"
   ],
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.11.0",
     "parcel": "^2.11.0"
+  },
+  "dependencies": {
+    "leaflet.locatecontrol": "^0.79.0"
   }
 }

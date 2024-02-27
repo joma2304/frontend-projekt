@@ -1,0 +1,33 @@
+@use 'variables';
+
+/*Knappar*/
+@mixin button($bg-color, $text-color, $hover-bg-color, $hover-text-color, $padding: 10px 20px, $border-radius: 5px, $border: none, $cursor: pointer) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: $padding;
+    border-radius: $border-radius;
+    border: $border;
+    cursor: $cursor;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+        background-color: $hover-bg-color;
+        color: $hover-text-color;
+    }
+}
+
+/*Inputfält*/
+@mixin styled-input($border-color, $background-color, $text-color) {
+    border: 1px solid $border-color;
+    background-color: $background-color;
+    color: $text-color;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+  
+    &:focus {
+      outline: none;
+      border-color: darken($border-color, 10%);
+      border: solid 1px
+    }
+  }
