@@ -24,7 +24,7 @@
     }
 
     25% {
-        color: red;
+        color: rgba(252,176,69,1);
         text-decoration: underline;
         transform: scale(1, 1);
     }
@@ -35,7 +35,7 @@
     }
 
     75% {
-        color: red;
+        color: rgba(252,176,69,1);
         text-decoration: underline;
         transform: scale(1, 1);
     }
@@ -46,14 +46,49 @@
     }
 }
 
-@keyframes mapborder {
+@keyframes mapShape {
     0% {
-        border: none;
+        border-radius: 2000%; /* Cirkulär form */
+        opacity: 0.5;
     }
-    50%{
-        border: solid 1px;
+    10% {
+        border-radius: 880%; /* Cirkulär form */
+        opacity: 0.55;
     }
-    100%{
-        border: solid 2px;
+    20% {
+        border-radius: 560%; /* Cirkulär form */
+        opacity: 0.6;
+    }
+    30% {
+        border-radius: 440%; /* Cirkulär form */
+        opacity: 0.66;
+    }
+    40% {
+        border-radius: 420%; /* Cirkulär form */
+        opacity: 0.7;
+    }
+    50% {
+        border-radius: 300%; /* Cirkulär form */
+        opacity: 0.77;
+    }
+    60% {
+        border-radius: 280%; /* Något mindre radien */
+        opacity: 0.8;
+    }
+    70% {
+        border-radius: 160%; /* Cirkulär form */
+        opacity: 0.88;
+    }
+    80% {
+        border-radius: 140%; /* Cirkulär form */
+        opacity: 0.9;
+    }
+    90% {
+        border-radius: 120%; /* Cirkulär form */
+        opacity: 1;
+    }
+    100% {
+        border-radius: 20px; /* Rektangel */
+        opacity: 1;
     }
 }

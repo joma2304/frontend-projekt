@@ -11,7 +11,7 @@
     transition: background-color 0.3s, color 0.3s;
 
     &:hover {
-        background-color: $hover-bg-color;
+        background-color: rgba(252,176,69,1);
         color: $hover-text-color;
     }
 }

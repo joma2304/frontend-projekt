@@ -47,6 +47,14 @@ async function search() {
 // Söknappen för kartan
 document.getElementById('searchButton').addEventListener('click', search); //Eventlistner för sökknapp
 
+// Så att man kan söka på enter med
+document.getElementById('searchInput').addEventListener('keydown', function(event) {
+    // Kontrollera om den nedtryckta tangenten är Enter (key code 13)
+    if (event.keyCode === 13) {
+        search(); // Anropa sökfunktionen om Enter trycks ned
+    }
+});
+
 // Väderfunktion
 async function searchWeather() {
     let query = document.getElementById('searchInput').value;
@@ -80,13 +88,21 @@ async function searchWeather() {
             document.getElementById('errorMessages').innerHTML += '<p>Väderinformation kunde inte hämtas, kontrollera stavning eller testa en annan plats!</p>'; //Vid fel med väderhämtning skriv ut detta på webbplatsen
         }
     } else {
-        alert('Ange en plats att söka efter.'); 
+        return null; //Så att det inte blir dubbla alert
     }
 }
 
 
 // Lägg till en händelselyssnare för sökknappen för väder
 document.getElementById('searchButton').addEventListener('click', searchWeather);
+
+// Så att man kan söka på enter med
+document.getElementById('searchInput').addEventListener('keydown', function(event) {
+    // Kontrollera om den nedtryckta tangenten är Enter (key code 13)
+    if (event.keyCode === 13) {
+        searchWeather(); // Anropa vädersökningsfunktionen om Enter trycks ned
+    }
+});
 
 // API-nyckel för OpenWeatherMap
 const apiKey = '04383bd1eb5fe54d4bdb8768276ceb9d';

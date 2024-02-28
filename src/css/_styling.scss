@@ -10,7 +10,7 @@
 body {
     font-size: 16px; /* Standard font size */
     line-height: 1.6; /* Standard line height */
-    background: radial-gradient(circle, variables.$base-color 0%, variables.$secondary-color 50%, rgba(252,176,69,1) 100%);
+    background: radial-gradient(circle, lighten(variables.$base-color, 10%) 0%, variables.$secondary-color 60%, variables.$base-color 100%);
     color: #333; /* Standard textfärg */
 }
 
@@ -43,8 +43,13 @@ body {
 h1 {
     color: #222; /* Huvudrubrikens färg */
     text-align: center;
-    margin-top: 20px; /* Avstånd över huvudrubriken */
     margin-bottom: 30px; /* Avstånd under huvudrubriken */
+}
+
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 150%;
+    }
 }
 
 /* Stil för titlar och rubriker */
@@ -77,10 +82,11 @@ h1 {
     height: 500px;
     border-radius: 20px;
     margin-bottom: 20px;
+    animation: mapShape 2s ease-out forwards; /* Använd keyframes-animationen */
 }
 
 #mapid:active {
-    animation: mapborder 0.3s linear forwards;
+    border: solid 5.5px;
 }
 
 @media only screen and (max-width: 800px) {
