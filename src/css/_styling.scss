@@ -8,42 +8,41 @@
 }
 
 body {
-    font-size: 16px; /* Standard font size */
-    line-height: 1.6; /* Standard line height */
+    line-height: 1.6; 
     background: radial-gradient(circle, lighten(variables.$base-color, 10%) 0%, variables.$secondary-color 60%, variables.$base-color 100%);
-    color: #333; /* Standard textfärg */
+    color: variables.$text-color; 
 }
 
-/* Flexibelt container för logotypen */
+/* logotypen */
 .logo-container {
     display: flex;
-    justify-content: center; /* Centrera logotypen horisontellt */
-    align-items: center; /* Centrera logotypen vertikalt */
-    margin-bottom: 20px; /* Avstånd under logotypen */
+    justify-content: center; 
+    align-items: center; 
+    margin-bottom: 20px; 
 }
 
-/* Länkstil för logotypen */
+/* logotypen */
 .image-link {
     display: inline-block;
     text-align: center;
 }
 
-/* Logotypens storlek och hover-effekt */
+/* Logotyp hover-effekt */
 .logo {
     width: 150px;
     height: auto;
-    transition: transform 0.3s ease; /* Smidig övergång för hover-effekt */
+    transition: transform 0.3s ease; 
 }
 
 .logo:hover {
-    transform: scale(1.1); /* Förstorningseffekt vid hover */
+    transform: scale(1.1); 
 }
 
 /* Stil för huvudrubriken */
 h1 {
-    color: #222; /* Huvudrubrikens färg */
+    color: variables.$text-color; 
     text-align: center;
-    margin-bottom: 30px; /* Avstånd under huvudrubriken */
+    margin-bottom: 30px; 
 }
 
 @media only screen and (max-width: 800px) {
@@ -52,19 +51,18 @@ h1 {
     }
 }
 
-/* Stil för titlar och rubriker */
 .title {
     text-align: center;
-    font-size: 24px; /* Storlek på titlar */
-    margin-bottom: 20px; /* Avstånd under titlar */
+    font-size: 24px; 
+    margin-bottom: 20px; 
 }
 
-/* Stil för sökfältet */
+
 #searchholder {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px; /* Avstånd under sökfältet */
+    margin-bottom: 20px; 
 
     #searchButton {
         @include mixins.button(variables.$secondary-color, #fff, variables.$hover-backg, variables.$hover-text);
@@ -82,7 +80,7 @@ h1 {
     height: 500px;
     border-radius: 20px;
     margin-bottom: 20px;
-    animation: mapShape 2s ease-out forwards; /* Använd keyframes-animationen */
+    animation: mapShape 2s ease-out forwards; 
 }
 
 #mapid:active {
