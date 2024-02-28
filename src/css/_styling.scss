@@ -4,65 +4,65 @@
 
 * {
     font-family: variables.$font;
+    box-sizing: border-box; 
 }
 
+body {
+    font-size: 16px; /* Standard font size */
+    line-height: 1.6; /* Standard line height */
+    background: radial-gradient(circle, variables.$base-color 0%, variables.$secondary-color 50%, rgba(252,176,69,1) 100%);
+    color: #333; /* Standard textfärg */
+}
+
+/* Flexibelt container för logotypen */
 .logo-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: center; /* Centrera logotypen horisontellt */
+    align-items: center; /* Centrera logotypen vertikalt */
+    margin-bottom: 20px; /* Avstånd under logotypen */
 }
 
+/* Länkstil för logotypen */
 .image-link {
     display: inline-block;
-    /* Gör att länken bara tar upp så mycket plats som bilden */
     text-align: center;
-    /* Centrera bilden horisontellt */
 }
 
+/* Logotypens storlek och hover-effekt */
 .logo {
     width: 150px;
     height: auto;
+    transition: transform 0.3s ease; /* Smidig övergång för hover-effekt */
 }
 
 .logo:hover {
-    animation: scale 2s linear forwards; /* Använder 'spin' animationen */
+    transform: scale(1.1); /* Förstorningseffekt vid hover */
 }
 
-/*Styling karta*/
-#mapid {
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-    height: 600px;
-    border-radius: 20px;
-}
-
-@media only screen and (max-width: 800px) {
-    #mapid {
-        margin-left: auto;
-        margin-right: auto;
-        width: 90%;
-        height: 400px;
-    }
-}
-
+/* Stil för huvudrubriken */
 h1 {
-    color: variables.$text-color;
+    color: #222; /* Huvudrubrikens färg */
     text-align: center;
+    margin-top: 20px; /* Avstånd över huvudrubriken */
+    margin-bottom: 30px; /* Avstånd under huvudrubriken */
 }
 
+/* Stil för titlar och rubriker */
 .title {
     text-align: center;
+    font-size: 24px; /* Storlek på titlar */
+    margin-bottom: 20px; /* Avstånd under titlar */
 }
 
+/* Stil för sökfältet */
 #searchholder {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px; /* Avstånd under sökfältet */
 
     #searchButton {
-        @include mixins.button(variables.$secondary-color, #fff, variables.$hover-text, #fff);
+        @include mixins.button(variables.$secondary-color, #fff, variables.$hover-backg, variables.$hover-text);
     }
 
     #searchInput {
@@ -70,15 +70,43 @@ h1 {
     }
 }
 
-
-body {
-    background: variables.$gradient-bg;
-    min-height: 100vh;
+/* Karta */
+#mapid {
+    margin: 0 auto;
+    width: 60%;
+    height: 500px;
+    border-radius: 20px;
+    margin-bottom: 20px;
 }
 
-/*Error message*/
+#mapid:active {
+    animation: mapborder 0.3s linear forwards;
+}
+
+@media only screen and (max-width: 800px) {
+    #mapid {
+        width: 90%;
+        height: 400px;
+    }
+}
+
+/* Popupruta */
+.leaflet-popup-content-wrapper {
+    background-color: #fff;
+    animation: scalepop 2s linear forwards;
+}
+
+.leaflet-popup-tip-container {
+    display: none;
+}
+
+/* Felmeddelanden */
 #errorMessages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     font-size: 1.3em;
     font-weight: bold;
+    animation: errormessage 4s ease-in-out infinite alternate;
 }

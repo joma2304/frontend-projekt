@@ -13,6 +13,9 @@ L.control.locate().addTo(map);
 
 // Sökfunktion för kartan
 async function search() {
+    // Dölj felmeddelandet när en ny sökning görs
+    document.getElementById('errorMessages').innerHTML = ''; // Tömmer innehållet i errorMessages elementet
+
     let query = document.getElementById('searchInput').value;   //Hämtar input i sökfält
     if (query.length > 0) {
         try {
@@ -53,11 +56,12 @@ async function searchWeather() {
             if (weatherData) {
                 // Exempel på man du kan använda väderdata jag kan lägga till mer eller mindre sen
                 const temperature = weatherData.main.temp; //Variabel för grader
+                const weatherIcon = weatherData.weather[0].icon; //Variabel för vädericon
                 const weatherDescription = weatherData.weather[0].description; //Variabel för väderbeskrivning
                 const cityName = weatherData.name //Variabel för stadens namn
-
+                
                 // Skapa en sträng för popup-innehållet
-                const popupContent = `${cityName}<br>Temperature: ${temperature}°C<br>Weather: ${weatherDescription}`;
+                const popupContent = `${cityName}<br>Temperatur: ${temperature}°C<br>Väder: ${weatherDescription}<br> <img src="http://openweathermap.org/img/wn/${weatherIcon}.png">`;
 
                 // Hämta koordinaterna för platsen
                 const lat = parseFloat(weatherData.coord.lat);
@@ -90,12 +94,12 @@ const apiKey = '04383bd1eb5fe54d4bdb8768276ceb9d';
 // Funktion för att hämta väderdata för en given stad
 async function getWeatherData(city) {
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=sv`);
         const data = await response.json();
         return data;
     } catch (error) {
         console.error('Error fetching weather data:', error);
         return null;
     }
-}
+} 
 
