@@ -63,7 +63,8 @@ async function searchWeather() {
             const weatherData = await getWeatherData(query);
             if (weatherData) {
                 // Exempel på man du kan använda väderdata jag kan lägga till mer eller mindre sen
-                const temperature = weatherData.main.temp; //Variabel för grader
+                let temperature = weatherData.main.temp; //Variabel för grader
+                temperature = Math.ceil(temperature); // Avrunda temperaturen uppåt till närmaste heltal
                 const weatherIcon = weatherData.weather[0].icon; //Variabel för vädericon
                 const weatherDescription = weatherData.weather[0].description; //Variabel för väderbeskrivning
                 const cityName = weatherData.name //Variabel för stadens namn
