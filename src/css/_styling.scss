@@ -1,8 +1,31 @@
 @use 'variables';
 @use 'mixins';
+@use 'keyframes';
 
 * {
     font-family: variables.$font;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-link {
+    display: inline-block;
+    /* Gör att länken bara tar upp så mycket plats som bilden */
+    text-align: center;
+    /* Centrera bilden horisontellt */
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.logo:hover {
+    animation: scale 2s linear forwards; /* Använder 'spin' animationen */
 }
 
 /*Styling karta*/
@@ -28,10 +51,6 @@ h1 {
 }
 
 .title {
-    text-align: center;
-}
-
-.rubrik {
     text-align: center;
 }
 

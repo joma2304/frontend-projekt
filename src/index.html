@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/main.scss">
     <title>Projekt uppgift</title>
     <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
     <!-- Leaflet JavaScript -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="js/mapAndWeather.js" type="module"></script>
@@ -18,10 +18,18 @@
 
 <body>
     <header>
-        <h1 class="title">Kart och vädertjänster</h1>
+        <div class="logo-container">
+            <a href="index.html">
+                <picture>
+                    <source srcset="images/icon.png?as=avif&width=200" type="image/avif">
+                    <source srcset="images/icon.png?as=webp&width=200" type="image/webp">
+                    <source srcset="images/icon.png?width=200" type="image/png">
+                    <img class="logo" src="images/icon.png" alt="Logotyp">
+                </picture>
+            </a>
+        </div>
     </header>
     <main>
-        <h1 class="rubrik">Karta</h1>
         <div id="searchholder">
             <input type="search" id="searchInput" placeholder="Sök efter en plats">
             <button id="searchButton">Sök</button>

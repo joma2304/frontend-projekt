@@ -47,16 +47,17 @@ document.getElementById('searchButton').addEventListener('click', search); //Eve
 // Väderfunktion
 async function searchWeather() {
     let query = document.getElementById('searchInput').value;
-    if (query.length > 0) {
+    if (query.length > 0) { //Kollar efter resultat i sökningen
         try {
             const weatherData = await getWeatherData(query);
             if (weatherData) {
                 // Exempel på man du kan använda väderdata jag kan lägga till mer eller mindre sen
-                const temperature = weatherData.main.temp;
-                const weatherDescription = weatherData.weather[0].description;
+                const temperature = weatherData.main.temp; //Variabel för grader
+                const weatherDescription = weatherData.weather[0].description; //Variabel för väderbeskrivning
+                const cityName = weatherData.name //Variabel för stadens namn
 
                 // Skapa en sträng för popup-innehållet
-                const popupContent = `Temperature: ${temperature}°C<br>Weather: ${weatherDescription}`;
+                const popupContent = `${cityName}<br>Temperature: ${temperature}°C<br>Weather: ${weatherDescription}`;
 
                 // Hämta koordinaterna för platsen
                 const lat = parseFloat(weatherData.coord.lat);
@@ -68,14 +69,14 @@ async function searchWeather() {
                     .setContent(popupContent)
                     .openOn(map);
             } else {
-                alert('Kunde inte hämta väderinformation.');
+                alert('Kunde inte hämta väderinformation.'); // Annars visa detta som alert
             }
         } catch (error) {
             console.error('Något gick fel vid hämtning av väderinformation:', error);
-            document.getElementById('errorMessages').innerHTML += '<p>Väderinformation kunde inte hämtas, kontrollera stavning eller testa en annan plats!</p>';
+            document.getElementById('errorMessages').innerHTML += '<p>Väderinformation kunde inte hämtas, kontrollera stavning eller testa en annan plats!</p>'; //Vid fel med väderhämtning skriv ut detta på webbplatsen
         }
     } else {
-        alert('Ange en plats att söka efter.');
+        alert('Ange en plats att söka efter.'); 
     }
 }
 
