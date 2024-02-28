@@ -1,10 +1,10 @@
 /*Färger*/
 $base-color: rgb(139, 196, 201);
-$secondary-color: rgb(53, 105, 168);
+$secondary-color: #005aa7;
 $text-color: rgb(31, 31, 31);
 $hover-text: darken($secondary-color, 10%);
 $hover-backg: darken($base-color, 20%);
-$gradient-bg: linear-gradient(0deg, $secondary-color 0%, lighten($base-color, 15%) 100%);
+$gradient-bg: llinear-gradient(to right, #005aa7, #fffde4);
 
 /*Font*/
 $font: "Roboto", sans-serif;

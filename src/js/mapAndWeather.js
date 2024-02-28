@@ -1,7 +1,7 @@
 'use strict';
 //Karta
 // Variabel för kartan globalt
-let map = L.map('mapid').setView([62.0, 15.0], 5);
+let map = L.map('mapid').setView([62.0, 15.0], 4);
 
 // Lägg till en OpenStreetMap-tile layer till kartan
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -13,8 +13,8 @@ L.control.locate().addTo(map);
 
 // Sökfunktion för kartan
 async function search() {
-    // Dölj felmeddelandet när en ny sökning görs
-    document.getElementById('errorMessages').innerHTML = ''; // Tömmer innehållet i errorMessages elementet
+    // Tömmer innehållet i errorMessages elementet
+    document.getElementById('errorMessages').innerHTML = '';
 
     let query = document.getElementById('searchInput').value;   //Hämtar input i sökfält
     if (query.length > 0) {
@@ -48,7 +48,7 @@ async function search() {
 document.getElementById('searchButton').addEventListener('click', search); //Eventlistner för sökknapp
 
 // Så att man kan söka på enter med
-document.getElementById('searchInput').addEventListener('keydown', function(event) {
+document.getElementById('searchInput').addEventListener('keydown', function (event) {
     // Kontrollera om den nedtryckta tangenten är Enter (key code 13)
     if (event.keyCode === 13) {
         search(); // Anropa sökfunktionen om Enter trycks ned
@@ -68,7 +68,7 @@ async function searchWeather() {
                 const weatherIcon = weatherData.weather[0].icon; //Variabel för vädericon
                 const weatherDescription = weatherData.weather[0].description; //Variabel för väderbeskrivning
                 const cityName = weatherData.name //Variabel för stadens namn
-                
+
                 // Skapa en sträng för popup-innehållet
                 const popupContent = `${cityName}<br>Temperatur: ${temperature}°C<br>Väder: ${weatherDescription}<br> <img src="http://openweathermap.org/img/wn/${weatherIcon}.png">`;
 
@@ -98,7 +98,7 @@ async function searchWeather() {
 document.getElementById('searchButton').addEventListener('click', searchWeather);
 
 // Så att man kan söka på enter med
-document.getElementById('searchInput').addEventListener('keydown', function(event) {
+document.getElementById('searchInput').addEventListener('keydown', function (event) {
     // Kontrollera om den nedtryckta tangenten är Enter (key code 13)
     if (event.keyCode === 13) {
         searchWeather(); // Anropa vädersökningsfunktionen om Enter trycks ned
@@ -118,5 +118,5 @@ async function getWeatherData(city) {
         console.error('Error fetching weather data:', error);
         return null;
     }
-} 
+}
 

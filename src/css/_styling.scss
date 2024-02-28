@@ -9,8 +9,9 @@
 
 body {
     line-height: 1.6; 
-    background: radial-gradient(circle, lighten(variables.$base-color, 10%) 0%, variables.$secondary-color 60%, variables.$base-color 100%);
+    background: linear-gradient(to right, variables.$secondary-color, #fffde4);
     color: variables.$text-color; 
+    overflow-x: hidden;
 }
 
 /* logotypen */
@@ -42,21 +43,9 @@ body {
 h1 {
     color: variables.$text-color; 
     text-align: center;
-    margin-bottom: 30px; 
-}
-
-@media only screen and (max-width: 800px) {
-    h1 {
-        font-size: 150%;
-    }
-}
-
-.title {
-    text-align: center;
-    font-size: 24px; 
     margin-bottom: 20px; 
+    margin-top: -40px;
 }
-
 
 #searchholder {
     display: flex;
@@ -87,10 +76,33 @@ h1 {
     border: solid 5.5px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px) {
     #mapid {
         width: 90%;
-        height: 400px;
+        height: 350px;
+    }
+
+    h1 {
+        font-size: 130%;
+    }
+
+    .logo {
+        width: 100px;
+    }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 900px) {
+    #mapid {
+        width: 80%;
+        height: 500px;
+    }
+
+    h1 {
+        font-size: 150%;
+    }
+
+    .logo {
+        width: 125px;
     }
 }
 
