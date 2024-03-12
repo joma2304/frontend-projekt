@@ -1,4 +1,6 @@
 'use strict';
+
+require('dotenv').config()
 //Karta
 // Variabel för kartan globalt
 let map = L.map('mapid').setView([62.0, 15.0], 4);
@@ -106,7 +108,7 @@ document.getElementById('searchInput').addEventListener('keydown', function (eve
 });
 
 // API-nyckel för OpenWeatherMap
-const apiKey = '04383bd1eb5fe54d4bdb8768276ceb9d';
+const apiKey = process.env.API_KEY;
 
 // Funktion för att hämta väderdata för en given stad
 async function getWeatherData(city) {
